@@ -1,8 +1,8 @@
 // googlePage.ts
 import { PageObjectModel, EnhancedPageObject } from 'nightwatch';
 
-const googleCommands = {
-  clickLogin(this: AmazonPage) {
+const amazonCommands = {
+  clickLogin(this: AmazonPage){
     return this
       .click('@login')
   },
@@ -91,9 +91,9 @@ const googleCommands = {
   }
 };
 
-const googlePage: PageObjectModel = {
+const amazonPage: PageObjectModel = {
   url: 'https://www.amazon.in/',
-  commands: [googleCommands],
+  commands: [amazonCommands],
   elements: {
     login: {
       selector: '#nav-link-accountList-nav-line-1',
@@ -206,8 +206,11 @@ const googlePage: PageObjectModel = {
   },
 };
 
-export default googlePage;
+// export default amazonPage;
 
-export interface AmazonPage
-  extends EnhancedPageObject<typeof googleCommands,
-  typeof googlePage.elements> { }
+// export interface AmazonPage
+//   extends EnhancedPageObject<typeof amazonCommands,
+//   typeof amazonPage.elements> { }
+export default amazonPage;
+
+export interface AmazonPage extends EnhancedPageObject<typeof amazonCommands, typeof amazonPage.elements> {}
